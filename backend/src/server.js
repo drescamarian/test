@@ -34,7 +34,7 @@ app.use(cookieParser()); // Zum Extrahieren von vom Client gesendeten Cookies
 //   res.status(204).end();
 // });
 
-app.use(cors({ origin: "http://localhost:5173/auth/login", credentials: true }));
+app.use(cors({ origin: "https://good-red-ladybug-belt.cyclic.app/", credentials: true }));
 
 // Verbinde mit Datenbank
 
