@@ -29,10 +29,10 @@ app.use(cookieParser()); // Zum Extrahieren von vom Client gesendeten Cookies
 // };
 // app.use(cors(corsOptions));
 
-app.options("*", (req, res) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.status(204).end();
-});
+// app.options("*", (req, res) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   res.status(204).end();
+// });
 
 // Verbinde mit Datenbank
 
