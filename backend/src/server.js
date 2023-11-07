@@ -35,27 +35,23 @@ app.options("/api", (req, res) => {
 });
 
 // Verbinde mit Datenbank
-await connectToDb();
 
 // ------------------------------------------- Eigene Middleware Funktionen -------------------------------------------
 
 // ------------------------------------------- Router Definitionen -------------------------------------------
-app.use('/auth', authRouter);
-app.use('/users', userRouter);
+app.use("/auth", authRouter);
+app.use("/users", userRouter);
 
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import { dirname } from "path";
+import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 app.use("/", express.static("./src/frontend"));
 app.get("*", (req, res) => res.sendFile(__dirname + "/frontend/index.html"));
 
 // Starte des Server
-app.listen(process.env.PORT, () => {
-  console.log(`😊 Server running on http://localhost:${process.env.PORT}/`);
+connectToDb().then(() => {
+  app.listen(process.env.PORT, () => {
+    console.log(`😊 Server running on http://localhost:${process.env.PORT}/`);
+  });
 });
-console.log("Test von Susann");
-console.log("Test von Nawras");
-console.log("Test von Andreas");
-console.log("Test von Andre");
-console.log("test")
