@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "nodemon ./src/server.js",
     "start": "node ./src/server.js",
-    "deploy":  "cd .. && cd frontend && npm run build && cp -r ./dist/* ../backend/src/frontend && cd .. && cd backend && npm start"
+    "build":  "cd .. && cd frontend && npm run build && cp -r ./dist/* ../backend/src/frontend && cd .. && cd backend && npm start"
   },
   "author": "",
   "license": "ISC",
