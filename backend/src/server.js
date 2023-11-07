@@ -20,19 +20,19 @@ app.use(express.json());
 app.use(cookieParser()); // Zum Extrahieren von vom Client gesendeten Cookies
 
 // Definiere die benoetigten CORS Optionen, um ein Frontend an den Server anzuschliessen
-const corsOptions = {
-    "origin": "http://localhost:5173", // Konfiguration fuer erlaubte Zugriffsquellen (* heisst alle duerfen)
-    "credentials": true, // Erlaube, dass ein Cookie mit Token im Header mit versendet werden kann
-    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE", // erlaubte HTTP Methoden bei Zugriffen
-    "preflightContinue": false,
-    "optionsSuccessStatus": 204
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//     "origin": "http://localhost:5173", // Konfiguration fuer erlaubte Zugriffsquellen (* heisst alle duerfen)
+//     "credentials": true, // Erlaube, dass ein Cookie mit Token im Header mit versendet werden kann
+//     "methods": "GET,HEAD,PUT,PATCH,POST,DELETE", // erlaubte HTTP Methoden bei Zugriffen
+//     "preflightContinue": false,
+//     "optionsSuccessStatus": 204
+// };
+// app.use(cors(corsOptions));
 
-// app.options("*", (req, res) => {
-//   res.header("Access-Control-Allow-Origin", "http://localhost:5173");
-//   res.status(204).end();
-// });
+app.options("*", (req, res) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.status(204).end();
+});
 
 // Verbinde mit Datenbank
 
